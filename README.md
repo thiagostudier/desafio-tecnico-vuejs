@@ -1,8 +1,24 @@
-# desafio-tecnico-vuejs
+# Desafio Técnico VueJs
 
-> Desafio Técnico VueJs
+### Descrição
 
-## Build Setup
+Um formulário de descadastro que é carregado inicialmente sem nenhuma opção. Ao adicionar uma nova justificativa no bloco superior, ela é exibida no formulário de descadastro.
+As justificativas ficam salvas em armazenamento local (localStorage), para que sejam recuperadas ao realizar o refresh da página.
+
+## Comandos de desenvolvimento do projeto
+
+``` bash
+# instalando vuejs
+yarn global add @vue/cli
+
+# criando projeto vuejs
+vue init webpack ****
+
+# instalando vuex
+npm install --save vuex
+```
+
+## Comandos de desenvolvimento com VueJS
 
 ``` bash
 # install dependencies
@@ -17,14 +33,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-
-
-
-yarn global add @vue/cli
-vue init webpack .****
-
-INSTALL FONTAWSOME
-
-npm install --save vuex
