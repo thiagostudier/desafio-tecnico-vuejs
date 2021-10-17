@@ -33,6 +33,7 @@ export default {
   position: relative;
   margin-right: 10px;
   padding-right: 10px;
+  display: inline-block;
 }
 
 .bread-crump-item:not(:last-child):after {

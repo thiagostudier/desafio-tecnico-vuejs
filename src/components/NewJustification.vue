@@ -64,7 +64,7 @@ export default {
     font-family: Roboto;
     font-weight: 500;
     font-size: 32px;
-    line-height: 35px;
+    line-height: 30px;
     margin: 0px 0px 90px 0px;
     color: #474747;
   }
