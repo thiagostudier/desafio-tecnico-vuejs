@@ -1,7 +1,10 @@
 <template>
   <site-template>
+    <!-- BREADCRUMP - LINKS -->
     <bread-crump :links="links"/>
-    <new-justification class="spacing" />
+    <!-- ADICIONAR NOVA OPÇÕES/JUSTIFICATIVA -->
+    <new-justification />
+    <!-- FORMULÁRIO DE DESCADASTRO -->
     <unsubscribe />
   </site-template>
 </template>
