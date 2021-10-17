@@ -17,12 +17,16 @@ export default {
 
 <style scoped>
 
+#bread-crump{
+  margin-bottom: 15px;
+}
+
 .bread-crump-item{
   font-family: Roboto;
   font-size: 16px;
   font-style: normal;
   font-weight: 300;
-  line-height: 19px;
+  line-height: 20px;
   letter-spacing: 0px;
   text-align: left;
   color: #7F7F7F;

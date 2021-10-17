@@ -21,7 +21,7 @@ label{
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 17px;
   color: #474747;
   cursor: pointer;
   display: flex;
@@ -36,7 +36,7 @@ input[type=text]{
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 17px;
   padding: 7px 0px;
   display: block;
   width: 100%;
@@ -48,7 +48,7 @@ label.button{
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 21px;
+  line-height: 17px;
   color: #474747;
 }
 
