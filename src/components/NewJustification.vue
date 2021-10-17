@@ -57,7 +57,7 @@ export default {
     background: #fff;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
     padding: 50px 50px 45px 50px;
-    margin: 15px 0px;
+    margin-bottom: 35px;
   }
 
   h1.title{
@@ -73,6 +73,21 @@ export default {
     width: 210px;
     margin-left: auto;
     margin-top: 85px;
+  }
+
+  @media (max-width: 768px){
+    #new-justification{
+      padding: 25px 20px;
+    }
+    h1.title{
+      font-size: 25px;
+      margin: 0px 0px 25px 0px;
+    }
+    .btn{
+      width: 210px;
+      max-width: 100%;
+      margin-top: 20px;
+    }
   }
 
 </style>

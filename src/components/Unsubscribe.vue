@@ -81,7 +81,6 @@ export default {
     background: #fff;
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
     padding: 80px 65px 30px 80px;
-    margin: 15px 0px;
     display: flex;
     gap: 75px
   }
@@ -105,7 +104,7 @@ export default {
     font-style: normal;
     font-weight: 500;
     font-size: 19.376px;
-    line-height: 20px;
+    line-height: 22px;
     color: #474747;
     margin: 0px;
     margin-bottom: 27px;
@@ -123,6 +122,23 @@ export default {
   .unsubscribe-message,
   .unsubscribe-form{
     width: 100%;
+  }
+
+  @media (max-width: 768px){
+    #unsubscribe{
+      padding: 25px 20px;
+      display: block;
+    }
+    .logo-companhia{
+      margin-bottom: 20px;
+    }
+    h1.title,
+    h2.subtitle{
+      margin-bottom: 20px;
+    }
+    .unsubscribe-message{
+      margin-bottom: 30px;
+    }
   }
 
 </style>

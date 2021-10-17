@@ -23,7 +23,7 @@ const store = new Vuex.Store({
     },
   },
   actions: {
-    addOption({ commit }, data) {
+    addOption({ commit }, data){
       commit('addOption', { data })
     },
     checkOptions({ commit }) {

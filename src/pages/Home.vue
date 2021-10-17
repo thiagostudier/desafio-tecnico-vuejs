@@ -1,7 +1,7 @@
 <template>
   <site-template>
     <bread-crump :links="links"/>
-    <new-justification />
+    <new-justification class="spacing" />
     <unsubscribe />
   </site-template>
 </template>
@@ -23,6 +23,7 @@ export default {
   },
   data(){
     return {
+      // LINKS PARA O BREADCRUMP
       links: [
         {
           link: "#",
@@ -40,5 +41,6 @@ export default {
     }
   }
 }
+
 </script>
 
