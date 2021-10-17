@@ -15,21 +15,19 @@ yarn global add @vue/cli
 vue init webpack ****
 
 # instalando vuex
-npm install --save vuex
+yarn add vuex
 ```
 
-## Comandos de desenvolvimento com VueJS
+## Comandos para clonar o projeto
 
 ``` bash
-# install dependencies
-npm install
+# clonando projeto do github
+git clone https://github.com/thiagostudier/desafio-tecnico-vuejs.git
 
-# serve with hot reload at localhost:8080
-npm run dev
+# instalar dependências
+yarn install
 
-# build for production with minification
-npm run build
+# subir ambiente no link: http://localhost:8080/#/
+yarn dev
 
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
