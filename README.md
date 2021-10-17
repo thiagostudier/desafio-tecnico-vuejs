@@ -1,5 +1,9 @@
 # Desafio Técnico VueJs
 
+### Projeto hospedado no vercel
+
+- https://desafio-tecnico-vuejs.vercel.app/#/
+
 ### Descrição
 
 Um formulário de descadastro que é carregado inicialmente sem nenhuma opção. Ao adicionar uma nova justificativa no bloco superior, ela é exibida no formulário de descadastro.
