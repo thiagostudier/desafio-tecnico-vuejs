@@ -1,7 +1,7 @@
 <template>
   <div id="form-group" v-bind:style="{ marginBottom: marginBottom + 'px' }">
     <slot />
-    <span v-if="characters" class="characters">{{value.length}}/{{characters}} caracteres</span>
+    <span v-if="characters" v-bind:class="{ red: value.length >= characters }" class="characters" >{{value.length}}/{{characters}} caracteres</span>
   </div>
 </template>
 
@@ -68,11 +68,16 @@ label.button{
   margin-top: 7px;
 }
 
+.characters.red{
+  color: #E0414B
+}
+
 /* CHECKBOX */
 
 .checkbox-dark {
   all: unset;
   width: 13px;
+  min-width: 13px;
   height: 13px;
   border-radius: 3px;
   border: 1px solid #B1ADAD !important;
@@ -108,6 +113,7 @@ label.button{
 input[type=radio] {
   all: unset;
   width: 13px;
+  min-width: 13px;
   height: 13px;
   border-radius: 100%;
   border: 1px solid #A6A6A6;
