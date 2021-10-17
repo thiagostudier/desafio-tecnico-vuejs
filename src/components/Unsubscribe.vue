@@ -11,19 +11,15 @@
     <div class="unsubscribe-form">
       <h2 class="subtitle">Por que você quer se descadastrar?</h2>
       <div class="unsubscribe-form-itens">
+        <!-- ITEMS DO FORMULÁRIO DE DESCADASTRO -->
         <form-group v-for="(item, i) in options" v-bind:key="i" :marginBottom="22">
           <label class="button">
-            <input type="radio" v-model="option" :value="item.text"/>
+            <input type="radio" v-model="option" :value="[item.text, item.obs]"/>
             {{item.text}}
           </label>
         </form-group>
-        <form-group :marginBottom="22">
-          <label class="button">
-            <input type="radio" v-model="option" value="Outro"/>
-            Outro:
-          </label>
-        </form-group>
-        <form-group :characters="150" :marginBottom="22" :value="comment" v-if="option == 'Outro'">
+        <!-- SE A OPÇÃO SELECIONADA PERMITIR COMENTÁRIOS -->
+        <form-group :characters="150" :marginBottom="22" :value="comment" v-if="option[1]">
           <input type="text" id="comment" v-model="comment" placeholder="Informe uma observação" maxlength="150"/>
         </form-group>
       </div>
@@ -43,17 +39,18 @@ export default {
   components: { FormGroup },
   data(){
     return {
+      // OPÇÕES/JUSTIFICATIVAS EM LOCALSTORAGE
       options: store.state.options,
+      // OPÇÃO SELECIONADA PELO USUARIO
+      option: "",
+      // COMENTÁRIO
       comment: "",
-      option: ""
     }
   },
   methods:{
     unsubscribe(){
       // VALIDAR INFORMAÇÕES
-      if((this.option == "") ||
-        (this.option == "Outro" && this.comment == "") ||
-        (this.comment.length > 150)){
+      if((this.option == "") && (this.comment.length > 150)){
         // FEEDBACK/ALERTA
         return alert('Informe um valor válido!')
       }else{
@@ -61,7 +58,7 @@ export default {
         this.comment = ""
         this.option = ""
         // FEEDBACK
-        return alert('Obrigado por preencher nossa pesquisa')
+        return alert('Obrigado por preencher nossa pesquisa!')
       }
     }
   },

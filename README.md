@@ -5,6 +5,12 @@
 Um formulário de descadastro que é carregado inicialmente sem nenhuma opção. Ao adicionar uma nova justificativa no bloco superior, ela é exibida no formulário de descadastro.
 As justificativas ficam salvas em armazenamento local (localStorage), para que sejam recuperadas ao realizar o refresh da página.
 
+### Funções
+
+- Cadastrar uma justificativa;
+- Informar se a justificativa permite inserir um comentário;
+- Preencher formulário de descadastro.
+
 ## Comandos de desenvolvimento do projeto
 
 ``` bash
