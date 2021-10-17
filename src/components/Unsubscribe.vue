@@ -1,5 +1,5 @@
 <template>
-  <div id="unsubscribe">
+  <div id="unsubscribe" v-if="options.length > 0">
     <div class="unsubscribe-message">
       <img class="logo-companhia" src="@/assets/company-logo.png" alt="Logo da Companhia" />
       <h1 class="title">Nós sentiremos sua falta
@@ -11,54 +11,31 @@
     <div class="unsubscribe-form">
       <h2 class="subtitle">Por que você quer se descadastrar?</h2>
       <div class="unsubscribe-form-itens">
-        <form-group :marginBottom="22">
+        <form-group v-for="(item, i) in options" v-bind:key="i" :marginBottom="22">
           <label class="button">
-            <input type="radio"/>
-            A frequência dos e-mails é muito alta.
+            <input type="radio" v-model="option" :value="item.text"/>
+            {{item.text}}
           </label>
         </form-group>
         <form-group :marginBottom="22">
           <label class="button">
-            <input type="radio"/>
-            A frequência dos e-mails é muito alta.
+            <input type="radio" v-model="option" value="Outro"/>
+            Outro:
           </label>
         </form-group>
-        <form-group :marginBottom="22">
-          <label class="button">
-            <input type="radio"/>
-            O conteúdo não me interessa.
-          </label>
-        </form-group>
-        <form-group :marginBottom="22">
-          <label class="button">
-            <input type="radio"/>
-            As mensagens são muito extensas.
-          </label>
-        </form-group>
-        <form-group :marginBottom="22">
-          <label class="button">
-            <input type="radio"/>
-            O aspecto visual das mensagens não me agrada.
-          </label>
-        </form-group>
-        <form-group :marginBottom="22">
-          <label class="button">
-            <input type="radio"/>
-            Não lembro de me inscrever / Nunca me cadastrei.
-          </label>
-        </form-group>
-        <form-group :characters="150" :marginBottom="22" :value="comment">
-          <input type="text" id="comment" v-model="comment" placeholder="Informe uma observação"/>
+        <form-group :characters="150" :marginBottom="22" :value="comment" v-if="option == 'Outro'">
+          <input type="text" id="comment" v-model="comment" placeholder="Informe uma observação" maxlength="150"/>
         </form-group>
       </div>
       <p>O descadastramento será efetuado para o e-mail: <a href="mailto:nome.sobrenome@pmweb.com.br">nome.sobrenome@pmweb.com.br</a></p>
-      <button class="btn able">Descadastrar</button>
+      <button class="btn" v-bind:class="{ able: option != '' }" @click="unsubscribe()">Descadastrar</button>
     </div>
   </div>
 </template>
 
 <script>
 
+import store from '@/store'
 import FormGroup from './FormGroup.vue'
 
 export default {
@@ -66,8 +43,33 @@ export default {
   components: { FormGroup },
   data(){
     return {
-      comment: ""
+      options: store.state.options,
+      comment: "",
+      option: ""
     }
+  },
+  methods:{
+    unsubscribe(){
+      // VALIDAR INFORMAÇÕES
+      if((this.option == "") ||
+        (this.option == "Outro" && this.comment == "") ||
+        (this.comment.length > 150)){
+        // FEEDBACK/ALERTA
+        return alert('Informe um valor válido!')
+      }else{
+        // LIMPAR FORULÁRIO
+        this.comment = ""
+        this.option = ""
+        // FEEDBACK
+        return alert('Obrigado por preencher nossa pesquisa')
+      }
+    }
+  },
+  watch: {
+    option: function(val, old) {
+      // QUANDO O RÁDIOBUTTON FOR ALTERADO, LIMPAR O DADO DO COMENTÁRIO
+      this.comment = ""
+    },
   }
 }
 
@@ -89,7 +91,7 @@ export default {
     font-style: normal;
     font-weight: bold;
     font-size: 30px;
-    line-height: 16px;
+    line-height: 30px;
     color: rgba(0, 0, 0, 0.6);
     margin: 0px;
     margin-bottom: 50px;
@@ -103,7 +105,7 @@ export default {
     font-style: normal;
     font-weight: 500;
     font-size: 19.376px;
-    line-height: 16px;
+    line-height: 20px;
     color: #474747;
     margin: 0px;
     margin-bottom: 27px;

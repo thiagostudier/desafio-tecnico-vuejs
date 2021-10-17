@@ -23,6 +23,8 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 yarn global add @vue/cli
-vue init webpack .
+vue init webpack .****
 
 INSTALL FONTAWSOME
+
+npm install --save vuex

@@ -43,11 +43,13 @@ button.btn{
   display: block;
   cursor: pointer;
   transition: 0.2s all;
+  pointer-events: none;
 }
 
 button.btn.able{
   background: #4569EF;
   color: #fff;
+  pointer-events: all;
 }
 
 /* end BUTTON FORM */
